@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Мой Веб-сайт</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'about' %}">О нас(информация с base-страницы)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p>&copy; 2025 Мой Веб-сайт. Все права защищены.</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>

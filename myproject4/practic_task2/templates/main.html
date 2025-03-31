@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'page1' %}">Page 1</a></li>
+                <li><a href="{% url 'page2' %}">Page 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <aside>
+        {% include 'sidebar.html' %}
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+</body>
+</html>
